@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div>
+        <h3>Form senza proprietà</h3>
+        <form>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <input type="submit" value="Invia">
+        </form>
+
+        <h3>Form method GET</h3>
+        <form method="get">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <input type="submit" value="Invia">
+        </form>
+
+        <h3>Form method POST</h3>
+        <form method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <input type="submit" value="Invia">
+        </form>
+
+        <h3>Form onclick() button</h3>
+        <form id="myForm">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nomeFormButton">   
+            <input type="text" name="cognome" id="cognomeFormButton">     
+            <input type="text" name="eta" id="etaFormButton">         
+        </form>
+
+        <input type="button" value="Invia" onclick="miafunzione()">
+        <input type="button" value="Valori" onclick="getCollection()">
+        <button onclick="getCollection()">Seconda collection</button>
+
+
+
+        <script>
+            const miafunzione = () => alert(document.getElementById('nomeFormButton').value);
+
+            const getCollection = () => {
+                const formValues = document.getElementById("myForm").elements;
+                alert(formValues[0].value);    
+            }
+        </script>
+    </div>
+</body>
+</html>
